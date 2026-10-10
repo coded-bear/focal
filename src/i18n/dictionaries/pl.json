@@ -30,6 +30,7 @@
     "speed": "Tempo czytania",
     "progress": "Pozycja w tekście",
     "position": "{current} / {total}",
+    "summary": "Słowa: {count} · {time}",
     "timeLeft": "Pozostało: {time}",
     "sourceDemo": "Demo",
     "sourceCustom": "Twój tekst",

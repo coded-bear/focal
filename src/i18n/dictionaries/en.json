@@ -30,6 +30,7 @@
     "speed": "Reading speed",
     "progress": "Position in text",
     "position": "{current} / {total}",
+    "summary": "Words: {count} · {time}",
     "timeLeft": "Time left: {time}",
     "sourceDemo": "Demo",
     "sourceCustom": "Your text",

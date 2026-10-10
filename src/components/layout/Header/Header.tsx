@@ -13,7 +13,7 @@ interface HeaderProps {
 }
 
 export const Header = ({ locale, strings }: HeaderProps) => (
-  <header className="flex h-16 shrink-0 items-center justify-between px-4 md:px-6">
+  <header className="mx-auto flex h-16 w-full max-w-3xl shrink-0 items-center justify-between px-4 md:px-6">
     <Link
       href={localizedPath(locale, paths.home)}
       aria-label={strings.home}
@@ -21,7 +21,7 @@ export const Header = ({ locale, strings }: HeaderProps) => (
     >
       <Logo />
     </Link>
-    <div className="flex items-center gap-2">
+    <div className="-mr-2 flex items-center gap-2">
       <LanguageSwitcher locale={locale} strings={strings} />
       <ThemeToggle strings={strings} />
     </div>

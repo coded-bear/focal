@@ -6,6 +6,7 @@ import {
   Play,
   Plus,
   RotateCcw,
+  SkipBack,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Kbd } from "@/components/ui/kbd";
@@ -82,7 +83,7 @@ export const ReaderControls = ({
           keys={shortcutKeys.restart}
           button={<Button variant="ghost" size="icon-lg" onClick={onRestart} />}
         >
-          <RotateCcw />
+          <SkipBack />
         </Hint>
         <Hint
           label={playLabel}
@@ -105,7 +106,7 @@ export const ReaderControls = ({
       <div
         role="group"
         aria-label={strings.speed}
-        className="flex items-center justify-center gap-1 sm:order-1 sm:justify-start"
+        className="flex items-center justify-center gap-1 sm:order-1 sm:-ml-2.5 sm:justify-start"
       >
         <Hint
           label={strings.slower}

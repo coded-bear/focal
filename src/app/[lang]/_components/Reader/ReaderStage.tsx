@@ -28,8 +28,8 @@ export const ReaderStage = ({ store, words, onToggle }: ReaderStageProps) => {
       onClick={onToggle}
       className="@container relative flex h-stage cursor-pointer items-center border-y select-none"
     >
-      <span className="absolute top-0 left-1/2 h-3 w-0.5 -translate-x-1/2 bg-focal" />
-      <span className="absolute bottom-0 left-1/2 h-3 w-0.5 -translate-x-1/2 bg-focal" />
+      <span className="absolute top-0 left-1/2 h-tick w-0.5 -translate-x-1/2 bg-focal" />
+      <span className="absolute bottom-0 left-1/2 h-tick w-0.5 -translate-x-1/2 bg-focal" />
       {word && (
         <p
           style={style}

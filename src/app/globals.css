@@ -51,7 +51,12 @@
   --text-word: var(--word-size);
   --text-word--line-height: 1;
   --spacing-stage: max(calc(var(--word-size) * 2.2), 7rem);
+  /* A tick ends 0.5rem short of the word's line box. */
+  --spacing-tick: calc(
+    (max(calc(var(--word-size) * 2.2), 7rem) - var(--word-size)) / 2 - 0.5rem
+  );
   --spacing-dialog-field: 60svh;
+  --spacing-dialog-max: calc(100svh - 2rem);
   --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -59,7 +64,7 @@
   color-scheme: light;
   --focal: oklch(0.58 0.23 27);
   --focal-foreground: oklch(0.985 0 0);
-  --word-size: clamp(1.75rem, 8vw, 5.5rem);
+  --word-size: clamp(1.75rem, 8vw, 4rem);
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
@@ -71,19 +76,19 @@
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.205 0 0);
   --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
+  --muted-foreground: oklch(0.5 0 0);
   --accent: oklch(0.97 0 0);
   --accent-foreground: oklch(0.205 0 0);
   --destructive: oklch(0.577 0.245 27.325);
   --border: oklch(0.922 0 0);
   --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
+  --ring: oklch(0.145 0 0);
   --chart-1: oklch(0.87 0 0);
   --chart-2: oklch(0.556 0 0);
   --chart-3: oklch(0.439 0 0);
   --chart-4: oklch(0.371 0 0);
   --chart-5: oklch(0.269 0 0);
-  --radius: 0.625rem;
+  --radius: 0.125rem;
   --sidebar: oklch(0.985 0 0);
   --sidebar-foreground: oklch(0.145 0 0);
   --sidebar-primary: oklch(0.205 0 0);
@@ -115,7 +120,7 @@
   --destructive: oklch(0.704 0.191 22.216);
   --border: oklch(1 0 0 / 10%);
   --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
+  --ring: oklch(0.985 0 0);
   --chart-1: oklch(0.87 0 0);
   --chart-2: oklch(0.556 0 0);
   --chart-3: oklch(0.439 0 0);

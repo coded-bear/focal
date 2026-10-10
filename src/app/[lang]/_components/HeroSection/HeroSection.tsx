@@ -8,8 +8,8 @@ interface HeroSectionProps {
 }
 
 export const HeroSection = ({ locale, dict }: HeroSectionProps) => (
-  <section className="mx-auto flex w-full max-w-3xl flex-col gap-8 px-4 py-10 md:px-6">
-    <h1 className="text-center font-mono text-xs font-normal tracking-widest text-balance text-muted-foreground uppercase">
+  <section className="mx-auto flex w-full max-w-3xl flex-col px-4 py-10 md:px-6">
+    <h1 className="mb-4 text-center font-mono text-xs font-normal tracking-widest text-balance text-muted-foreground uppercase">
       {dict.hero.title}
     </h1>
     <Reader
@@ -18,7 +18,7 @@ export const HeroSection = ({ locale, dict }: HeroSectionProps) => (
       strings={dict.reader}
       pasteStrings={dict.paste}
     />
-    <p className="mx-auto max-w-prose text-center text-sm leading-relaxed text-pretty text-muted-foreground">
+    <p className="mx-auto mt-12 max-w-prose text-center text-sm leading-relaxed text-pretty text-muted-foreground">
       {dict.hero.description}
     </p>
   </section>

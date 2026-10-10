@@ -28,6 +28,8 @@ const closers = /["'”’»)\]]+$/u;
 const afterSeparator = /(?<=[-–—/])/u;
 const separators = /[-–—/]/gu;
 
+const longWord = { core: 13, piece: 12 } as const;
+
 const length = (value: string) => Array.from(value).length;
 
 export function pivotIndex(coreLength: number) {
@@ -46,6 +48,23 @@ function splitCompound(token: string) {
     parts.every((part) => length(part.replace(separators, "")) >= 2);
 
   return splittable ? parts : [token];
+}
+
+/** Breaks a word too long to read at a glance into hyphenated pieces. */
+function splitLong(token: string) {
+  if (length(token.replace(edgePunctuation, "")) <= longWord.core) {
+    return [token];
+  }
+
+  const chars = Array.from(token);
+  const count = Math.ceil(chars.length / longWord.piece);
+  const size = Math.ceil(chars.length / count);
+
+  return Array.from({ length: count }, (_, index) => {
+    const piece = chars.slice(index * size, (index + 1) * size).join("");
+
+    return index < count - 1 ? `${piece}-` : piece;
+  });
 }
 
 function toWord(token: string, lastInParagraph: boolean): Word {
@@ -81,7 +100,7 @@ export function parseText(text: string): ParsedText {
     .map((paragraph) => paragraph.split(/\s+/u).filter(Boolean))
     .filter((tokens) => tokens.length > 0)
     .flatMap((tokens) => {
-      const parts = tokens.flatMap(splitCompound);
+      const parts = tokens.flatMap(splitCompound).flatMap(splitLong);
 
       return parts.map((part, index) =>
         toWord(part, index === parts.length - 1),

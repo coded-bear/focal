@@ -87,6 +87,17 @@ const ReaderPasteDialogForm = ({
       >
         <X />
       </DialogClose>
+      {canReadClipboard && (
+        <Button
+          variant="outline"
+          size="lg"
+          className="justify-self-start max-sm:w-full"
+          onClick={pasteFromClipboard}
+        >
+          <ClipboardPaste data-icon="inline-start" />
+          {strings.fromClipboard}
+        </Button>
+      )}
       <Textarea
         ref={textareaRef}
         aria-label={strings.title}
@@ -99,26 +110,29 @@ const ReaderPasteDialogForm = ({
             event.currentTarget.form?.requestSubmit();
           }
         }}
-        className="max-h-dialog-field min-h-48 resize-y"
+        className="max-h-dialog-field min-h-32 resize-y sm:min-h-48"
       />
       <div
         className="grid gap-1 text-xs text-muted-foreground"
         aria-live="polite"
       >
-        <p className="tabular-nums">
-          {interpolate(strings.stats, {
-            count: numbers.format(parsed.words.length),
-            time: formatDuration(remainingTime(parsed, 0, wpm)),
-            wpm,
-          })}
-        </p>
+        <div className="flex flex-wrap justify-between gap-x-4 gap-y-1">
+          <p className="tabular-nums">
+            {interpolate(strings.stats, {
+              count: numbers.format(parsed.words.length),
+              time: formatDuration(remainingTime(parsed, 0, wpm)),
+              wpm,
+            })}
+          </p>
+          <p>{strings.privacy}</p>
+        </div>
         {draft.length >= pasteLimit && (
-          <p>
+          <p className="text-foreground">
             {interpolate(strings.limit, { count: numbers.format(pasteLimit) })}
           </p>
         )}
         {clipboardDenied && (
-          <p>
+          <p className="text-foreground">
             {interpolate(strings.clipboardDenied, {
               shortcut: /Mac|iPhone|iPad/.test(navigator.userAgent)
                 ? pasteShortcuts.apple
@@ -127,25 +141,14 @@ const ReaderPasteDialogForm = ({
           </p>
         )}
       </div>
-      <div className="flex flex-col-reverse gap-2 sm:flex-row sm:justify-between">
-        {canReadClipboard ? (
-          <Button variant="outline" size="lg" onClick={pasteFromClipboard}>
-            <ClipboardPaste data-icon="inline-start" />
-            {strings.fromClipboard}
-          </Button>
-        ) : (
-          <span />
-        )}
-        <div className="flex flex-col-reverse gap-2 sm:flex-row">
-          <DialogClose render={<Button variant="ghost" size="lg" />}>
-            {strings.cancel}
-          </DialogClose>
-          <Button type="submit" size="lg" disabled={!draft.trim()}>
-            {strings.submit}
-          </Button>
-        </div>
+      <div className="flex flex-col-reverse gap-2 sm:flex-row sm:justify-end">
+        <DialogClose render={<Button variant="ghost" size="lg" />}>
+          {strings.cancel}
+        </DialogClose>
+        <Button type="submit" size="lg" disabled={!draft.trim()}>
+          {strings.submit}
+        </Button>
       </div>
-      <p className="text-xs text-muted-foreground">{strings.privacy}</p>
     </form>
   );
 };
@@ -169,7 +172,7 @@ export const ReaderPasteDialog = ({
         showCloseButton={false}
         initialFocus={textareaRef}
         finalFocus={getReturnFocus}
-        className="sm:max-w-xl"
+        className="max-h-dialog-max overflow-y-auto sm:max-w-xl data-open:zoom-in-100! data-closed:zoom-out-100!"
       >
         <ReaderPasteDialogForm
           {...form}
