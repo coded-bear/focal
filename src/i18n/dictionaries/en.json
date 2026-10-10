@@ -1,5 +1,64 @@
 {
-  "home": {
-    "title": "Hello World!"
+  "metadata": {
+    "title": "Focal: RSVP speed reader",
+    "description": "Read faster with RSVP. Focal shows text one word at a time at a fixed point and highlights the letter your eye should rest on.",
+    "ogAlt": "The Focal logo: the word focal with a red letter o between two tick marks"
+  },
+  "header": {
+    "home": "Focal, home",
+    "language": "Language",
+    "languages": {
+      "pl": "Polski",
+      "en": "English"
+    },
+    "themeToDark": "Switch to dark theme",
+    "themeToLight": "Switch to light theme"
+  },
+  "hero": {
+    "title": "Speed reading, one word at a time",
+    "description": "RSVP shows text one word at a time at a fixed point, so your eyes never travel along a line. The red letter marks where to look.",
+    "demoText": "Speed reading means taking in text faster without losing the thread. On a normal page your eyes do not glide. They hop from point to point, pause, and sometimes hop back. RSVP, short for Rapid Serial Visual Presentation, takes the hopping away. Words arrive one at a time in a single fixed spot, so your gaze can rest. One letter in every word is marked in red. It sits at the optimal recognition point, the place where a word is recognised fastest. Paste your own text below and keep going."
+  },
+  "reader": {
+    "play": "Play",
+    "pause": "Pause",
+    "replay": "Read again",
+    "restart": "Restart",
+    "slower": "Slower",
+    "faster": "Faster",
+    "wpm": "{value} WPM",
+    "speed": "Reading speed",
+    "progress": "Position in text",
+    "position": "{current} / {total}",
+    "timeLeft": "Time left: {time}",
+    "sourceDemo": "Demo",
+    "sourceCustom": "Your text",
+    "backToDemo": "Back to demo",
+    "paste": "Paste text",
+    "statusPlaying": "Playing",
+    "statusPaused": "Paused",
+    "statusFinished": "Finished",
+    "transcript": "Full text"
+  },
+  "paste": {
+    "title": "Read your own text",
+    "description": "Paste an article, an email, anything.",
+    "placeholder": "Paste or type your text here…",
+    "fromClipboard": "Paste from clipboard",
+    "clipboardDenied": "The browser blocked clipboard access. Paste with {shortcut} instead.",
+    "stats": "Words: {count} · about {time} at {wpm} WPM",
+    "limit": "Limit reached: the text was cut at {count} characters.",
+    "submit": "Read",
+    "cancel": "Cancel",
+    "close": "Close",
+    "privacy": "Your text never leaves your browser."
+  },
+  "footer": {
+    "copyright": "© {year} Focal",
+    "privacy": "Your text never leaves your browser.",
+    "shortcuts": "Shortcuts",
+    "shortcutPlay": "play / pause",
+    "shortcutSentence": "sentence",
+    "shortcutSpeed": "speed"
   }
 }

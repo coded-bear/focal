@@ -1,5 +1,64 @@
 {
-  "home": {
-    "title": "Witaj, świecie!"
+  "metadata": {
+    "title": "Focal: szybkie czytanie metodą RSVP",
+    "description": "Czytaj szybciej metodą RSVP. Focal wyświetla tekst słowo po słowie w jednym punkcie i podświetla literę, na której zatrzymuje się wzrok.",
+    "ogAlt": "Logo Focal: słowo focal z czerwoną literą o między dwoma znacznikami"
+  },
+  "header": {
+    "home": "Focal, strona główna",
+    "language": "Język",
+    "languages": {
+      "pl": "Polski",
+      "en": "English"
+    },
+    "themeToDark": "Włącz ciemny motyw",
+    "themeToLight": "Włącz jasny motyw"
+  },
+  "hero": {
+    "title": "Szybkie czytanie, słowo po słowie",
+    "description": "RSVP wyświetla tekst słowo po słowie w jednym punkcie, więc wzrok nie wędruje po linijce. Czerwona litera wskazuje, gdzie patrzeć.",
+    "demoText": "Szybkie czytanie to przyswajanie tekstu w krótszym czasie bez gubienia wątku. Na zwykłej stronie wzrok nie sunie płynnie. Przeskakuje z punktu do punktu, zatrzymuje się, a czasem wraca. RSVP, czyli Rapid Serial Visual Presentation, usuwa te skoki. Słowa pojawiają się pojedynczo w jednym stałym miejscu, więc oko może odpocząć. W każdym słowie jedna litera jest czerwona. Wyznacza punkt optymalnego rozpoznania, czyli miejsce, w którym wyraz rozpoznajemy najszybciej. Wklej poniżej własny tekst i czytaj dalej."
+  },
+  "reader": {
+    "play": "Odtwórz",
+    "pause": "Wstrzymaj",
+    "replay": "Czytaj ponownie",
+    "restart": "Od początku",
+    "slower": "Wolniej",
+    "faster": "Szybciej",
+    "wpm": "{value} słów/min",
+    "speed": "Tempo czytania",
+    "progress": "Pozycja w tekście",
+    "position": "{current} / {total}",
+    "timeLeft": "Pozostało: {time}",
+    "sourceDemo": "Demo",
+    "sourceCustom": "Twój tekst",
+    "backToDemo": "Wróć do demo",
+    "paste": "Wklej tekst",
+    "statusPlaying": "Odtwarzanie",
+    "statusPaused": "Wstrzymano",
+    "statusFinished": "Koniec tekstu",
+    "transcript": "Pełny tekst"
+  },
+  "paste": {
+    "title": "Czytaj własny tekst",
+    "description": "Wklej artykuł, e-mail, cokolwiek.",
+    "placeholder": "Wklej lub wpisz tekst…",
+    "fromClipboard": "Wklej ze schowka",
+    "clipboardDenied": "Przeglądarka zablokowała dostęp do schowka. Wklej skrótem {shortcut}.",
+    "stats": "Słowa: {count} · około {time} przy {wpm} słów/min",
+    "limit": "Osiągnięto limit: tekst został ucięty do {count} znaków.",
+    "submit": "Czytaj",
+    "cancel": "Anuluj",
+    "close": "Zamknij",
+    "privacy": "Twój tekst nie opuszcza przeglądarki."
+  },
+  "footer": {
+    "copyright": "© {year} Focal",
+    "privacy": "Twój tekst nie opuszcza przeglądarki.",
+    "shortcuts": "Skróty",
+    "shortcutPlay": "start / pauza",
+    "shortcutSentence": "zdanie",
+    "shortcutSpeed": "tempo"
   }
 }

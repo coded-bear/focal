@@ -46,9 +46,20 @@
   --radius-2xl: calc(var(--radius) * 1.8);
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
+  --color-focal: var(--focal);
+  --color-focal-foreground: var(--focal-foreground);
+  --text-word: var(--word-size);
+  --text-word--line-height: 1;
+  --spacing-stage: max(calc(var(--word-size) * 2.2), 7rem);
+  --spacing-dialog-field: 60svh;
+  --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 :root {
+  color-scheme: light;
+  --focal: oklch(0.58 0.23 27);
+  --focal-foreground: oklch(0.985 0 0);
+  --word-size: clamp(1.75rem, 8vw, 5.5rem);
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
@@ -84,6 +95,9 @@
 }
 
 .dark {
+  color-scheme: dark;
+  --focal: oklch(0.66 0.22 25);
+  --focal-foreground: oklch(0.145 0 0);
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.205 0 0);
@@ -126,5 +140,21 @@
   }
   html {
     @apply font-sans;
+  }
+}
+
+/* Shrinks a word whose longer half would not fit beside the pivot letter.
+   --word-span is the width in characters of a word centred on its pivot. */
+@utility text-word-fit {
+  font-size: min(var(--word-size), calc(100cqw / (var(--word-span, 1) * 0.61)));
+  line-height: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
   }
 }

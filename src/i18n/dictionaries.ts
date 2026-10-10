@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { lang } from "next/root-params";
-import { hasLocale, type Locale } from "./config";
+import { defaultLocale, hasLocale, type Locale } from "./config";
 
 export type Dictionary = typeof import("./dictionaries/pl.json");
 
@@ -9,9 +9,18 @@ const dictionaries: Record<Locale, () => Promise<Dictionary>> = {
   en: () => import("./dictionaries/en.json").then((module) => module.default),
 };
 
-export const getDictionary = async () => {
+export const getLocale = async () => {
   const locale = await lang();
   if (!hasLocale(locale)) notFound();
 
-  return dictionaries[locale]();
+  return locale;
 };
+
+export const getDictionary = async () => dictionaries[await getLocale()]();
+
+/**
+ * For metadata image routes, where `next/root-params` is not available.
+ * Falls back to the default locale when the route has no locale yet.
+ */
+export const getDictionaryFor = (locale: string | undefined) =>
+  dictionaries[locale && hasLocale(locale) ? locale : defaultLocale]();
