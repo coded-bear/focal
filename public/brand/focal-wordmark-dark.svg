@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 238 136" fill="none" stroke="#fafafa" stroke-width="8" role="img" aria-label="Focal">
+  <!-- f -->
+  <path d="M20 104V44a16 16 0 0 1 16-16h6M6 58h34" />
+  <!-- c -->
+  <path d="M151.09 65.5a21 21 0 1 0 0 27" />
+  <!-- a -->
+  <circle cx="185" cy="79" r="21" />
+  <path d="M206 54v50" />
+  <!-- l -->
+  <path d="M226 24v80" />
+  <!-- o: the pivot letter, with reticle ticks above and below -->
+  <g stroke="#fc4447">
+    <circle cx="75" cy="79" r="21" />
+    <path d="M75 20v18M75 120v16" stroke-width="4" />
+  </g>
+</svg>

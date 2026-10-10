@@ -1,53 +1,41 @@
-# Next.js Website Starter
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="public/brand/focal-wordmark-dark.svg" />
+    <img src="public/brand/focal-wordmark.svg" alt="Focal" width="240" />
+  </picture>
+</p>
 
-A starter for multilingual websites built on the Next.js App Router.
+<p align="center">A free, one-page RSVP speed reader.</p>
 
-## What's included
+Focal shows text one word at a time at a fixed point and highlights each word's optimal recognition point (ORP), so the eye does not travel along a line. A demo text plays on load at 300 WPM; paste your own text to read it in the same place. The text is processed entirely in the browser and is never stored or sent anywhere.
 
-- Next.js 16 (App Router), React 19, TypeScript
-- Tailwind CSS v4 with a `cn()` helper
-- shadcn/ui on Base UI
-- i18n: `pl` (default) and `en`, routes under `/[lang]`, JSON dictionaries, redirect based on `Accept-Language`
-- Generated `/sitemap.xml` and `/robots.txt`
-- ESLint, Prettier and GitHub Actions CI
-- Agent setup: `CLAUDE.md`, Claude Code settings, Impeccable
+- Play/pause, restart, sentence skip, scrubbing, 100–1000 WPM
+- Paste dialog with word count and time estimate
+- Polish and English, light and dark themes
+- No accounts, no backend, no analytics
 
-## Getting started
+## Development
 
 Requires Node.js 22 and pnpm.
 
 ```bash
-pnpm dlx degit coded-bear/nextjs-website-starter my-site
-cd my-site
 pnpm install
 pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000). It redirects to `/pl` or `/en` depending on your browser language.
+Open [http://localhost:3000](http://localhost:3000).
 
-Other scripts: `pnpm build`, `pnpm start`, `pnpm lint`, `pnpm format`, `pnpm format:check`.
+### Scripts
 
-## How to
+| Script              | What it does                          |
+| ------------------- | ------------------------------------- |
+| `pnpm dev`          | Start the dev server                  |
+| `pnpm build`        | Production build; also the type check |
+| `pnpm start`        | Serve the production build            |
+| `pnpm lint`         | Run ESLint                            |
+| `pnpm format`       | Format all files with Prettier        |
+| `pnpm format:check` | Check formatting without writing      |
 
-- **Add text**: add the key to every file in `src/i18n/dictionaries/`, then read it with `getDictionary()`.
-- **Add a page**: create `src/app/[lang]/<route>/page.tsx` and add the path to `paths` in `src/constants/index.ts`. The sitemap is built from that list.
-- **Add a locale**: add a JSON file in `src/i18n/dictionaries/`, then register it in `src/i18n/config.ts` and `src/i18n/dictionaries.ts`.
+### Stack
 
-The folder layout is in [CLAUDE.md](CLAUDE.md); the detailed conventions are in `.claude/rules/`.
-
-## Agent setup
-
-These tools are used by `CLAUDE.md` but are not declared in this repo, so install them once:
-
-- **Context7** (user-level MCP server): `claude mcp add --scope user --transport http context7 https://mcp.context7.com/mcp`
-- **playwright-cli** (browser testing): `npm install -g @playwright/cli@latest`
-- **shadcn skill** (user-level agent skill): `pnpm dlx skills add shadcn/ui --skill shadcn --agent claude-code -g`
-- **Impeccable** (Claude Code plugin, declared in `.claude/settings.json`): Claude Code offers to install it when you trust this folder. Manual fallback: `/plugin marketplace add pbakaus/impeccable`, then `/plugin` → Discover → Impeccable. Update from the `/plugin` menu. Do not also run `npx impeccable install` here: it duplicates the skill. Run the detector without an agent with `npx impeccable detect src/`.
-
-## Before going live
-
-Replace the placeholders: `siteConfig.url` in `src/config/site.ts`, `metadata` in `src/app/[lang]/layout.tsx`, `src/app/favicon.ico` and `name` in `package.json`.
-
-## CI
-
-GitHub Actions runs `pnpm format:check`, `pnpm lint` and `pnpm build` on every pull request and on pushes to `main`.
+Next.js 16 (App Router), React 19, TypeScript, Tailwind CSS v4, shadcn/ui on Base UI.

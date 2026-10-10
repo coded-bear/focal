@@ -4,7 +4,7 @@ interface LogoProps {
   className?: string;
 }
 
-/** The wordmark from `docs/assets/focal-wordmark.svg`; the red `o` is its pivot. */
+/** The wordmark from `public/brand/focal-wordmark.svg`; the red `o` is its pivot. */
 export const Logo = ({ className }: LogoProps) => (
   <svg
     viewBox="0 0 238 136"

@@ -46,14 +46,13 @@ The page explains RSVP by doing it: the demo is the explanation, and the visitor
 
 ## Brand Commitments
 
-- **Name and logo.** `Focal`; the lowercase `focal` wordmark drawn as monoline paths, with the `o` (the word's own pivot letter) in red between two ticks. The mark (the `o` with ticks on a dark tile) is for icons only. Sources: `docs/assets/focal-wordmark.svg`, `docs/assets/focal-mark.svg`, `docs/assets/logo-preview.png`.
+- **Name and logo.** `Focal`; the lowercase `focal` wordmark drawn as monoline paths, with the `o` (the word's own pivot letter) in red between two ticks. The mark (the `o` with ticks on a dark tile) is for icons only. Sources: `public/brand/focal-wordmark.svg`, `public/brand/focal-mark.svg`, `public/brand/logo-preview.png`.
 - **One red thing.** The accent colour is reserved for the pivot letter, the two ticks, the `o` in the logo and the progress fill. Buttons, links, focus rings and icons stay neutral.
 
 ## Evidence on Hand
 
-- `docs/BRIEF.md`: the full build brief, including reader rules and the acceptance checklist.
 - Demo texts and all UI copy in `src/i18n/dictionaries/pl.json` and `en.json`.
-- Logo assets in `docs/assets/`.
+- Logo assets in `public/brand/`.
 - There are no testimonials, user numbers, benchmarks, press or reading-speed claims. Future work must not invent them.
 
 ## Product Principles

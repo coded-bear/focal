@@ -34,7 +34,7 @@ export default async function OpengraphImage({ params }: ImageParams) {
         background,
       }}
     >
-      {/* The wordmark from docs/assets/focal-wordmark.svg. */}
+      {/* The wordmark from public/brand/focal-wordmark.svg. */}
       <svg
         width="420"
         height="240"
